@@ -1,0 +1,20 @@
+phone = input('Введите номер телефона')
+print('phone = ', phone, type(phone))
+phone_book = [phone, '8 (495)430-23-27', '+-4-9-5-43-023-97', '4-3-0-2-3-9-7']
+phone_book += ['8-495-430']
+
+print('phone_book = ', phone_book, type(phone_book))
+phone_book_new = [s.replace('-', '').replace('(','').replace(')', '') for s in phone_book]
+print('phone_book_new =', phone_book_new, type(phone_book_new))
+for i in range(len(phone_book_new)):
+    if len(phone_book_new[i]) == 7:
+        phone_book_new = '+7495' + phone_book_new[i]
+    elif phone_book_new[i][0] == '8':
+        phone_book_new[i] = '+7' + phone_book_new
+print('phone_book_new = ', phone_book_new, type(phone_book_new))
+
+for i in range(1, len(phone_book_new)):
+    if phone_book_new[0] == phone_book_new[i]:
+        print('YES')
+    elfe:
+        print('No')
